@@ -19,14 +19,17 @@ function Planner() {
 
   return (
     <>
-      <p>What do you want to achieve today?</p>
+      <label htmlFor="task-entry">What do you want to achieve today?</label>
       <input
         type="text"
+        id="task-entry"
         name="task-entry"
         value={taskInputVal}
         onChange={handleTaskChange}
       />
-      <p>How long do you want to work today?</p>
+      <label htmlFor="work-time-entry">
+        How long do you want to work today?
+      </label>
       <input
         type="number"
         name="work-time-entry"
@@ -34,7 +37,7 @@ function Planner() {
         min="10"
         onChange={handleTimeChange}
       />
-      <p>Default timer length?</p>
+      <label htmlFor="default-time-entry">Default timer length?</label>
       <input
         type="number"
         name="default-time-entry"
