@@ -11,5 +11,3 @@ Technology used:
 - Vite
 - Vitest
 - CSS modules
-
----

@@ -35,6 +35,7 @@ function Planner() {
         name="work-time-entry"
         value={workTimeVal}
         min="10"
+        max="600"
         onChange={handleTimeChange}
       />
       <label htmlFor="default-time-entry">Default timer length?</label>
@@ -43,6 +44,7 @@ function Planner() {
         name="default-time-entry"
         value={defaultTimeVal}
         min="10"
+        max="60"
         onChange={handleDefaultTimeChange}
       />
     </>
