@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 function Timer() {
-  const [timerMinutes, setTimerMinutes] = useState(25);
-  const [timerSeconds, setTimerSeconds] = useState(0);
+  const [timerMinutes, setTimerMinutes] = useState(5);
+  const [timerSeconds, setTimerSeconds] = useState(5);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -22,10 +22,14 @@ function Timer() {
     return () => clearInterval(interval);
   }, [timerMinutes]);
 
+  const formattedMins = String(timerMinutes).padStart(2, "0");
+  const formattedSecs = String(timerSeconds).padStart(2, "0");
   return (
     <>
       <h2>Timer</h2>
-      {timerMinutes}:{timerSeconds}
+      <p>
+        {formattedMins}:{formattedSecs}
+      </p>
     </>
   );
 }
