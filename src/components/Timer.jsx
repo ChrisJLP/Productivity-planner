@@ -1,11 +1,22 @@
 import { useState } from "react";
 import { useEffect } from "react";
 
-function Timer() {
-  const [timerMinutes, setTimerMinutes] = useState(5);
-  const [timerSeconds, setTimerSeconds] = useState(5);
+function Timer({ mins }) {
+  const [timerMinutes, setTimerMinutes] = useState(mins);
+  const [timerSeconds, setTimerSeconds] = useState(0);
+  const [isRunning, setIsRunning] = useState(false);
 
   useEffect(() => {
+    if (!isRunning) {
+      setTimerMinutes(mins);
+    }
+  }, [mins]);
+
+  const handleClick = () => {
+    setIsRunning(true);
+  };
+  useEffect(() => {
+    if (!isRunning) return;
     const interval = setInterval(() => {
       setTimerSeconds((prevTimerSeconds) => {
         if (prevTimerSeconds === 0) {
@@ -20,7 +31,7 @@ function Timer() {
       });
     }, 1000);
     return () => clearInterval(interval);
-  }, [timerMinutes]);
+  }, [isRunning, timerMinutes]);
 
   const formattedMins = String(timerMinutes).padStart(2, "0");
   const formattedSecs = String(timerSeconds).padStart(2, "0");
@@ -30,6 +41,7 @@ function Timer() {
       <p>
         {formattedMins}:{formattedSecs}
       </p>
+      <button onClick={handleClick}></button>
       <p>Total time worked:</p>
       <p>35:00</p>
       <p>Time left today:</p>

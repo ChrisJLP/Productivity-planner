@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Timer from "./Timer.jsx";
 
 function Planner() {
   const [taskInputVal, setTaskInputVal] = useState("");
@@ -48,6 +49,7 @@ function Planner() {
         max="60"
         onChange={handleDefaultTimeChange}
       />
+      <Timer mins={defaultTimeVal} />
     </>
   );
 }
