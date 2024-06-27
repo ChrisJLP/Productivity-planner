@@ -19,6 +19,7 @@ function Planner() {
 
   return (
     <>
+      <h2>Planner</h2>
       <label htmlFor="task-entry">What do you want to achieve today?</label>
       <input
         type="text"
