@@ -30,6 +30,10 @@ function Timer() {
       <p>
         {formattedMins}:{formattedSecs}
       </p>
+      <p>Total time worked:</p>
+      <p>35:00</p>
+      <p>Time left today:</p>
+      <p>25:00</p>
     </>
   );
 }
