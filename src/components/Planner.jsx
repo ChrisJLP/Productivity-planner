@@ -49,7 +49,7 @@ function Planner() {
         max="60"
         onChange={handleDefaultTimeChange}
       />
-      <Timer mins={defaultTimeVal} />
+      <Timer mins={defaultTimeVal} totalTimeToWork={workTimeVal} />
     </>
   );
 }

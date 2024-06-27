@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { useEffect } from "react";
 
-function Timer({ mins }) {
+function Timer({ mins, totalTimeToWork }) {
   const [timerMinutes, setTimerMinutes] = useState(mins);
   const [timerSeconds, setTimerSeconds] = useState(0);
+  const [totalMinsLeft, setTotalMinsLeft] = useState(totalTimeToWork);
+  const [totalSecondsLeft, setTotalSecondsLeft] = useState(0);
+  const [timeWorked, setTimeWorked] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
 
   useEffect(() => {
@@ -11,6 +14,10 @@ function Timer({ mins }) {
       setTimerMinutes(mins);
     }
   }, [mins]);
+
+  useEffect(() => {
+    setTotalMinsLeft(totalTimeToWork);
+  }, [totalTimeToWork]);
 
   const handleClick = () => {
     setIsRunning(true);
@@ -35,6 +42,9 @@ function Timer({ mins }) {
 
   const formattedMins = String(timerMinutes).padStart(2, "0");
   const formattedSecs = String(timerSeconds).padStart(2, "0");
+  const formattedTotalMins = String(totalMinsLeft).padStart(2, "0");
+  const formattedTotalSecs = String(totalSecondsLeft).padStart(2, "0");
+
   return (
     <>
       <h2>Timer</h2>
@@ -43,9 +53,11 @@ function Timer({ mins }) {
       </p>
       <button onClick={handleClick}></button>
       <p>Total time worked:</p>
-      <p>35:00</p>
+      <p>{timeWorked}</p>
       <p>Time left today:</p>
-      <p>25:00</p>
+      <p>
+        {formattedTotalMins}:{formattedTotalSecs}
+      </p>
     </>
   );
 }
