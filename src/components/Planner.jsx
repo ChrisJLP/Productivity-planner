@@ -4,7 +4,7 @@ import Timer from "./Timer.jsx";
 function Planner() {
   const [taskInputVal, setTaskInputVal] = useState("");
   const [workTimeVal, setWorkTimeVal] = useState(0);
-  const [defaultTimeVal, setDefaultTimeVal] = useState(25);
+  const [defaultTimeVal, setDefaultTimeVal] = useState(0);
 
   const handleTaskChange = (e) => {
     setTaskInputVal(e.target.value);

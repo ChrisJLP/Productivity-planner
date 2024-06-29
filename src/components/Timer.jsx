@@ -1,9 +1,8 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 function Timer({ mins, totalTimeToWork }) {
   const [timerMinutes, setTimerMinutes] = useState(mins);
-  const [timerSeconds, setTimerSeconds] = useState(0);
+  const [timerSeconds, setTimerSeconds] = useState(2);
   const [totalMinsLeft, setTotalMinsLeft] = useState(totalTimeToWork);
   const [totalSecondsLeft, setTotalSecondsLeft] = useState(10);
   const [timeWorkedMins, setTimeWorkedMins] = useState(0);
@@ -23,12 +22,17 @@ function Timer({ mins, totalTimeToWork }) {
   const handleClick = () => {
     setIsRunning(true);
   };
+
   useEffect(() => {
+    let shouldStop = false;
     if (!isRunning) return;
     const interval = setInterval(() => {
       setTimerSeconds((prevTimerSeconds) => {
         if (prevTimerSeconds === 0) {
           if (timerMinutes === 0) {
+            console.log("test");
+            shouldStop = true;
+            setIsRunning(false);
             clearInterval(interval);
             return 0;
           }
@@ -39,6 +43,9 @@ function Timer({ mins, totalTimeToWork }) {
       });
 
       setTimeWorkedSecs((prevTimeWorkedSecs) => {
+        if (shouldStop) {
+          return prevTimeWorkedSecs;
+        }
         if (prevTimeWorkedSecs == 59) {
           setTimeWorkedMins((prevTimeWorkedMins) => prevTimeWorkedMins + 1);
           return 0;
@@ -47,6 +54,9 @@ function Timer({ mins, totalTimeToWork }) {
       });
 
       setTotalSecondsLeft((prevTotalSecondsLeft) => {
+        if (shouldStop) {
+          return prevTotalSecondsLeft;
+        }
         if (prevTotalSecondsLeft == 0) {
           setTotalMinsLeft((prevTotalMinsLeft) => {
             if (prevTotalMinsLeft == 0) {
@@ -78,7 +88,7 @@ function Timer({ mins, totalTimeToWork }) {
       <p>
         {formattedMins}:{formattedSecs}
       </p>
-      <button onClick={handleClick}></button>
+      <button onClick={handleClick}>Start</button>
       <p>Total time worked:</p>
       <p>
         {formattedWorkedMins}:{formattedWorkedSecs}
