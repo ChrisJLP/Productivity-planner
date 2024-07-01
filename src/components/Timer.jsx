@@ -2,12 +2,14 @@ import { useState, useEffect } from "react";
 
 function Timer({ mins, totalTimeToWork }) {
   const [timerMinutes, setTimerMinutes] = useState(mins);
-  const [timerSeconds, setTimerSeconds] = useState(2);
+  const [timerSeconds, setTimerSeconds] = useState(11);
   const [totalMinsLeft, setTotalMinsLeft] = useState(totalTimeToWork);
   const [totalSecondsLeft, setTotalSecondsLeft] = useState(10);
   const [timeWorkedMins, setTimeWorkedMins] = useState(0);
   const [timeWorkedSecs, setTimeWorkedSecs] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
+
+  const [stopStart, setStopStart] = useState("Start");
 
   useEffect(() => {
     if (!isRunning) {
@@ -20,7 +22,16 @@ function Timer({ mins, totalTimeToWork }) {
   }, [totalTimeToWork]);
 
   const handleClick = () => {
-    setIsRunning(true);
+    if (isRunning) {
+      setIsRunning(false);
+    } else {
+      setIsRunning(true);
+    }
+    if (stopStart == "Start") {
+      setStopStart("Stop");
+    } else {
+      setStopStart("Start");
+    }
   };
 
   useEffect(() => {
@@ -30,9 +41,10 @@ function Timer({ mins, totalTimeToWork }) {
       setTimerSeconds((prevTimerSeconds) => {
         if (prevTimerSeconds === 0) {
           if (timerMinutes === 0) {
-            console.log("test");
             shouldStop = true;
             setIsRunning(false);
+            handleClick();
+            setTimerMinutes(mins);
             clearInterval(interval);
             return 0;
           }
@@ -88,7 +100,7 @@ function Timer({ mins, totalTimeToWork }) {
       <p>
         {formattedMins}:{formattedSecs}
       </p>
-      <button onClick={handleClick}>Start</button>
+      <button onClick={handleClick}>{stopStart}</button>
       <p>Total time worked:</p>
       <p>
         {formattedWorkedMins}:{formattedWorkedSecs}
