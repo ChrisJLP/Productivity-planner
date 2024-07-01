@@ -1,0 +1,57 @@
+.plannerContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+    width: 100vw;
+    background-color: lightgrey;
+}
+
+.timerPlanner {
+    display: flex;
+}
+
+.todayWorkLength, .defaultTimerLength {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 2vh;
+    gap: 4px;
+    width: 50vw;
+    justify-content: center;
+}
+
+.defaultTimerLength {
+    margin-left: -1vh;
+}
+
+.labels {
+    text-align: center;
+    margin: 1vw;
+}
+
+.inputs {
+    text-align: center;
+    width: 8vw;
+    display: flex;
+    align-self: center;
+    border-radius: 3%;
+    border: 2px solid grey;
+}
+
+.topLabel {
+    margin-top: 2vh;
+}
+
+.plannerTitle {
+    font-size: 32px;
+}
+
+.textInputs {
+    text-align: center;
+    border-radius: 3%;
+    border: 2px solid grey;
+    margin-top: 1vh;
+}

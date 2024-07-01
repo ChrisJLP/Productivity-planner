@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 
 function Timer({ mins, totalTimeToWork }) {
   const [timerMinutes, setTimerMinutes] = useState(mins);
-  const [timerSeconds, setTimerSeconds] = useState(11);
+  const [timerSeconds, setTimerSeconds] = useState(0);
   const [totalMinsLeft, setTotalMinsLeft] = useState(totalTimeToWork);
-  const [totalSecondsLeft, setTotalSecondsLeft] = useState(10);
+  const [totalSecondsLeft, setTotalSecondsLeft] = useState(0);
   const [timeWorkedMins, setTimeWorkedMins] = useState(0);
   const [timeWorkedSecs, setTimeWorkedSecs] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
