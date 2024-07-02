@@ -15,3 +15,5 @@ I came across a problem with the additional two timers for total time worked and
 I added functionality to pause the timer when the user wants to, and restart it when it finishes (goes back to the default time).
 
 Now the logic is finished, I need to style and position the elements on the page. I'm going to start with design for mobile first, then make it look good on a desktop too.
+
+I'm struggling getting the experience on the phone as I would like it. There seems to be a bit of a difference between what I see on the dev version and what I see when it is published with netlify.

@@ -11,9 +11,13 @@
 .otherTimers {
     display: flex;
     gap: 25px;
-    font-size: 1.2em
 }
 
+.timerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+}
 
 .timer {
     color: #2E2E2E;
@@ -27,18 +31,14 @@
     background-color: #466A9F;
     border: 2px solid #3E5F8F;
     padding: 3px 6px;
-    font-size: 1.5em;
+    font-size: 1.4em;
     text-decoration: none;
     color: #FFFFFF;
     margin-top: 1vh;
     margin-bottom: 5vh;
 }
 
-.startButton:hover {
-    background-color: #3E5F8F
-}
-
 .timerHeader {
-    margin-top: 7vh;
+    margin-top: 4vh;
     margin-bottom: 2vh;
 }

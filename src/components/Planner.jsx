@@ -51,7 +51,7 @@ function Planner() {
           </div>
           <div className={styles.defaultTimerLength}>
             <label htmlFor="default-time-entry" className={styles.labels}>
-              Default timer length?
+              Default timer?
             </label>
             <input
               className={styles.inputs}
