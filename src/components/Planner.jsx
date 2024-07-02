@@ -37,7 +37,7 @@ function Planner() {
         <div className={styles.timerPlanner}>
           <div className={styles.todayWorkLength}>
             <label htmlFor="work-time-entry" className={styles.labels}>
-              Total time to work today?
+              Total time to work?
             </label>
             <input
               className={styles.inputs}

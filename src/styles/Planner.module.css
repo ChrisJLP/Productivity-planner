@@ -41,7 +41,10 @@
     border-radius: 3%;
     border: 2px solid #CCCCCC;
     background-color: #F0F0F0;
-    color: #333333
+    color: #333333;
+    font-size: 18px;
+    padding: 4px;
+    width: 45px;
 }
 
 .topLabel {
@@ -58,4 +61,5 @@
     border: 2px solid #CCCCCC;
     margin-top: 1vh;
     background-color: #F0F0F0;
+    font-size: 18px;
 }
