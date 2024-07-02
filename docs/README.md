@@ -12,4 +12,4 @@ Technology used:
 - Vitest
 - CSS modules
 
-<img src="./image.png" alt="planner/timer site picture" width="600" height="auto"/>
+<img src="./image.png" alt="planner/timer site picture" width="400" height="auto"/>
