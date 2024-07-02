@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import styles from "../styles/Timer.module.css";
 
 function Timer({ mins, totalTimeToWork }) {
   const [timerMinutes, setTimerMinutes] = useState(mins);
@@ -96,19 +97,29 @@ function Timer({ mins, totalTimeToWork }) {
 
   return (
     <>
-      <h2>Timer</h2>
-      <p>
-        {formattedMins}:{formattedSecs}
-      </p>
-      <button onClick={handleClick}>{stopStart}</button>
-      <p>Total time worked:</p>
-      <p>
-        {formattedWorkedMins}:{formattedWorkedSecs}
-      </p>
-      <p>Time left today:</p>
-      <p>
-        {formattedTotalMins}:{formattedTotalSecs}
-      </p>
+      <div className={styles.timerContainer}>
+        <h2 className={styles.timerHeader}>Timer</h2>
+        <p className={styles.mainTimer}>
+          {formattedMins}:{formattedSecs}
+        </p>
+        <button onClick={handleClick} className={styles.startButton}>
+          {stopStart}
+        </button>
+        <div className={styles.otherTimers}>
+          <div className={styles.timerContainer}>
+            <p>Total time worked:</p>
+            <p className={styles.timer}>
+              {formattedWorkedMins}:{formattedWorkedSecs}
+            </p>
+          </div>
+          <div className={styles.timerContainer}>
+            <p>Time left today:</p>
+            <p className={styles.timer}>
+              {formattedTotalMins}:{formattedTotalSecs}
+            </p>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

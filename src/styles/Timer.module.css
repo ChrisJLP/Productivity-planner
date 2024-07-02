@@ -1,0 +1,43 @@
+.timerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: #C8E6C9;
+    height: 60vh;
+    margin: 0;
+}
+
+.otherTimers {
+    display: flex;
+    gap: 25px;
+}
+
+
+.timer {
+    color: #2E2E2E;
+}
+
+.mainTimer {
+    font-size: 3em;
+}
+
+.startButton {
+    background-color: #466A9F;
+    border: 2px solid #3E5F8F;
+    padding: 3px 6px;
+    font-size: 1em;
+    text-decoration: none;
+    color: #FFFFFF;
+    margin-top: 1vh;
+    margin-bottom: 5vh;
+}
+
+.startButton:hover {
+    background-color: #3E5F8F
+}
+
+.timerHeader {
+    margin-top: 7vh;
+    margin-bottom: 2vh;
+}

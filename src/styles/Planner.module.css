@@ -4,9 +4,10 @@
     gap: 5px;
     align-items: center;
     justify-content: center;
-    height: 30vh;
+    height: 40vh;
     width: 100vw;
-    background-color: lightgrey;
+    background-color: #B3D1F1;
+    margin: 0;
 }
 
 .timerPlanner {
@@ -38,7 +39,9 @@
     display: flex;
     align-self: center;
     border-radius: 3%;
-    border: 2px solid grey;
+    border: 2px solid #CCCCCC;
+    background-color: #F0F0F0;
+    color: #333333
 }
 
 .topLabel {
@@ -52,6 +55,7 @@
 .textInputs {
     text-align: center;
     border-radius: 3%;
-    border: 2px solid grey;
+    border: 2px solid #CCCCCC;
     margin-top: 1vh;
+    background-color: #F0F0F0;
 }
