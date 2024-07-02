@@ -11,3 +11,5 @@ Technology used:
 - Vite
 - Vitest
 - CSS modules
+
+!["planner/timer site"](./image.png)
